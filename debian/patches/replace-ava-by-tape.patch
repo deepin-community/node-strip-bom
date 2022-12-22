@@ -1,0 +1,27 @@
+Description: replace ava by tape
+Author: Xavier Guimard <yadd@debian.org>
+Forwarded: not-needed
+Last-Update: 2020-12-21
+
+--- a/test/test.js
++++ b/test/test.js
+@@ -1,13 +1,15 @@
+-import fs from 'fs';
+-import path from 'path';
+-import test from 'ava';
+-import stripBom from '..';
++const fs = require('fs');
++const path = require('path');
++const test = require('tape');
++const stripBom = require('..');
+ 
+ test('strips BOM from string', t => {
+ 	t.is(stripBom(fs.readFileSync(path.join(__dirname, 'fixture-utf8'), 'utf8')), 'Unicorn\n');
++	t.end();
+ });
+ 
+ test('strips BOM from the beginning of a file', t => {
+ 	const fixture = fs.readFileSync(path.join(__dirname, 'fixture-utf8-bom-middle'), 'utf8');
+ 	t.is(stripBom(fixture), fixture);
++	t.end();
+ });
