@@ -1,3 +1,12 @@
+node-strip-bom (4.0.0-2) unstable; urgency=medium
+
+  * Team upload
+  * Fix GitHub tags regex
+  * Update standards version to 4.6.0, no changes needed.
+  * Fix filenamemangle
+
+ -- Yadd <yadd@debian.org>  Sat, 20 Nov 2021 17:03:30 +0100
+
 node-strip-bom (4.0.0-1) unstable; urgency=medium
 
   * Team upload
